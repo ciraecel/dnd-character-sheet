@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Character Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="character-info">
+            <!-- Character Picture -->
+            <div class="character-picture">
+                <label for="image">Character Picture:</label>
+                <input type="file" id="image" accept="image/*">
+                <div id="image-preview" class="image-preview">
+                    <img src="default-image.png" alt="Character Image">
+                </div>
+                <div class="character-name">
+                    <h2 id="character-name">Character Name</h2>
+                    <p id="character-level">Level: 1</p>
+                    <p id="character-race">Race: Human</p>
+                    <p id="character-class">Class: Warrior</p>
+                </div>
+            </div>
+
+            <!-- Character Details -->
+            <div class="character-details">
+                <h2>Character Details</h2>
+                <div class="details-box">
+                    <div class="details-section">
+                        <label for="player-name">Player's Name:</label>
+                        <input type="text" id="player-name" placeholder="Enter player's name">
+                    </div>
+
+                    <div class="details-section">
+                        <label for="campaign-id">Campaign or Player ID:</label>
+                        <input type="text" id="campaign-id" placeholder="Enter campaign or player ID">
+                    </div>
+
+                    <!-- Added Character Name Section -->
+                    <div class="details-section">
+                        <label for="character-name-input">Character Name:</label>
+                        <input type="text" id="character-name-input" placeholder="Enter character name">
+                    </div>
+
+                    <div class="details-section">
+                        <label for="race-heritage">Race/Ancestry/Heritage (Source):</label>
+                        <input type="text" id="race-heritage" placeholder="Enter race/ancestry/heritage">
+                    </div>
+
+                    <div class="details-section">
+                        <label for="gender">Character Gender:</label>
+                        <select id="gender">
+                            <option value="">Select Gender</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input type="text" id="gender-other" placeholder="Specify other gender" style="display: none;">
+                    </div>
+                    
+
+                    <div class="details-section">
+                        <label for="class">Class:</label>
+                        <select id="class">
+                            <option value="">Select a class</option>
+                            <option value="barbarian">Barbarian</option>
+                            <option value="bard">Bard</option>
+                            <option value="cleric">Cleric</option>
+                            <option value="druid">Druid</option>
+                            <option value="fighter">Fighter</option>
+                            <option value="monk">Monk</option>
+                            <option value="paladin">Paladin</option>
+                            <option value="ranger">Ranger</option>
+                            <option value="rogue">Rogue</option>
+                            <option value="magician">Magician</option>
+                            <option value="warlock">Warlock</option>
+                            <option value="wizard">Wizard</option>
+                            <option value="artificer">Artificer</option>
+                            <option value="hunter">Hunter</option>
+                        </select>
+                    </div>
+
+                    <div class="details-section">
+                        <label for="level">Level:</label>
+                        <input type="number" id="level" min="1" placeholder="Enter character level">
+                    </div>
+
+                    <div class="details-section">
+                        <label for="background">Background:</label>
+                        <input type="text" id="background" placeholder="Enter background">
+                    </div>
+
+                    <div class="details-section">
+                        <label for="alignment">Alignment:</label>
+                        <input type="text" id="alignment" placeholder="Enter alignment">
+                    </div>
+
+                    <div class="details-section">
+                        <label>Options:</label>
+                        <div class="checkbox">
+                            <input type="checkbox" id="basic-rules" name="options">
+                            <label for="basic-rules">Basic Rules Only</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" id="phb-only" name="options">
+                            <label for="phb-only">PHB Only</label>
+                        </div>
+                    </div>
+
+                    <div class="details-section">
+                        <label for="description">Describe Your Character:</label>
+                        <textarea id="description" rows="3" placeholder="Replace random role-playing notes with your own ideas"></textarea>
+                    </div>
+
+                    <h2>Personality & Background</h2>
+                    <div class="details-section">
+                        <label for="personality-trait1">Personality Trait #1:</label>
+                        <textarea id="personality-trait1" rows="2" placeholder="Enter personality trait"></textarea>
+                    </div>
+                    <div class="details-section">
+                        <label for="ideal">Ideal:</label>
+                        <textarea id="ideal" rows="2" placeholder="Enter ideal"></textarea>
+                    </div>
+                    <div class="details-section">
+                        <label for="personality-trait2">Personality Trait #2:</label>
+                        <textarea id="personality-trait2" rows="2" placeholder="Enter personality trait"></textarea>
+                    </div>
+                    <div class="details-section">
+                        <label for="bond">Bond:</label>
+                        <textarea id="bond" rows="2" placeholder="Enter bond"></textarea>
+                    </div>
+                    <div class="details-section">
+                        <label for="flaw">Flaw:</label>
+                        <textarea id="flaw" rows="2" placeholder="Enter flaw"></textarea>
+                    </div>
+                    <div class="details-section">
+                        <label for="background-feature">Background Feature:</label>
+                        <textarea id="background-feature" rows="2" placeholder="Enter background feature"></textarea>
+                    </div>
+
+                    <h2>Abilities</h2>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <label for="strength">Strength</label>
+                            <input type="number" id="strength" min="-100" placeholder="STR">
+                        </div>
+                        <div class="stat">
+                            <label for="dexterity">Dexterity</label>
+                            <input type="number" id="dexterity" min="-100" placeholder="DEX">
+                        </div>
+                        <div class="stat">
+                            <label for="constitution">Constitution</label>
+                            <input type="number" id="constitution" min="-100" placeholder="CON">
+                        </div>
+                        <div class="stat">
+                            <label for="intelligence">Intelligence</label>
+                            <input type="number" id="intelligence" min="-100" placeholder="INT">
+                        </div>
+                        <div class="stat">
+                            <label for="wisdom">Wisdom</label>
+                            <input type="number" id="wisdom" min="-100" placeholder="WIS">
+                        </div>
+                        <div class="stat">
+                            <label for="charisma">Charisma</label>
+                            <input type="number" id="charisma" min="-100" placeholder="CHA">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="save-button" class="btn">Save Character</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
